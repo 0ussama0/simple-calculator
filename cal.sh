@@ -5,7 +5,12 @@ multi(){
 echo "$1*$2" | bc -l
 }
 div(){
+if [ $2 -eq 0 ]
+then
+echo "Division on zero undefine"
+else
 echo "$1/$2" | bc -l
+fi
 }
 sub(){
 echo "$1-$2" | bc -l
